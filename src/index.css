@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-pink: #FFB7C5;
+  --color-brand-mint: #B2F7EF;
+  --color-brand-lavender: #E0BBE4;
+  --color-brand-cream: #FFF9F0;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+body {
+  @apply bg-brand-cream text-gray-800 font-sans;
+  background-image: radial-gradient(circle at 10% 20%, rgba(255, 183, 197, 0.1) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(178, 247, 239, 0.1) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+.lovely-card {
+  @apply bg-white/80 backdrop-blur-md border-4 border-brand-pink/20 rounded-3xl shadow-lg;
+}
+
+.lovely-btn {
+  @apply px-6 py-3 bg-brand-pink text-white font-bold rounded-full hover:bg-brand-pink/80 transition-all active:scale-95 shadow-md flex items-center gap-2;
+}
+
+.lovely-input {
+  @apply w-full px-5 py-3 bg-white border-2 border-brand-mint rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand-mint/30 transition-all;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
